@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+.title {
+  font-family: Merriweather;
+  padding-top: 10px;
+  color: pink;
+  font-size: x-large;
+  padding-bottom: 5px;
+}
+.author {
+  padding-bottom: 5px;
+}
+
+h2 {
+  font-family:Merriweather;
+  text-align: center;
+}
+p {
+  text-align: center;
+  font-family: 'Merriweather', serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+::placeholder {
+  color: rgb(0, 0, 0);
+}
+.testing {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+.editbutt {
+  cursor: pointer;
+}
+
+.editbutt:hover {
+  transform: scale(1.05);
+  color: pink;
+}
+
+.editbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.savebutt {
+  cursor: pointer;
+}
+.savebutt:hover {
+  transform: scale(1.05);
+  color: green;
+}
+.wrapper {
+  border-bottom: 2px solid black;
+  width: 600px;
+  margin-bottom: 10px;
+}
+.searchicon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.editbar {
+  border-radius: 5px;
+  padding: 5px;
+}
+.searchbar {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 15px;
+  width: 350px;
+}
+.cancelButton{
+  cursor: pointer;
+}
+.cancelButton:hover {
+  transform: scale(1.05);
+  color: red;
+}

@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: solid black 1px;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-family: Kaushan Script;
+}
+a {
+  all: unset;
+  cursor: pointer;
+}
+.btn2 {
+  text-decoration: none;
+  all: unset;
+  background-color: pink;
+  color: white;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.Header {
+  font-family: Kaushan Script;
+}

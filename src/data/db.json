@@ -1,28 +1,16 @@
 {
   "blogs": [
     {
-      "id": 1,
-      "author": "Bassam",
-      "title": "kareem",
-      "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. "
+      "title": "fhfgh",
+      "author": "ewrwerwer",
+      "body": "rewerwerw",
+      "id": 5
     },
     {
-      "id": 2,
-      "author": "kareem",
-      "title": "Second Blog ",
-      "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. "
-    },
-    {
-      "id": 3,
-      "author": "Omar",
-      "title": "Third Blog ",
-      "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. "
-    },
-    {
-      "title": "sadfwaeqdsa",
-      "author": "asdasdasd",
-      "body": "dasdasd",
-      "id": 4
+      "title": "jgjgh",
+      "author": "nour",
+      "body": "klgfjfjpsdfksdpofklsdpofkdposk",
+      "id": 6
     }
   ]
 }

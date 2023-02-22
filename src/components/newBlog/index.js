@@ -1,48 +1,46 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import "./styles.css";
+import styles from "./styles.module.css";
 
 const NewBlog = () => {
   const navigate = useNavigate();
-  const New = useRef({
+  const newBlogRef = useRef({
     title: "",
     author: "",
     body: "",
   });
 
-  console.log(New.current);
   function handleSubmit(event) {
     event.preventDefault();
 
     fetch("http://localhost:4000/blogs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(New.current),
+      body: JSON.stringify(newBlogRef.current),
     });
-    console.log(New.current);
     navigate("/");
   }
 
   function handleChange(event) {
-    New.current = {
-      ...New.current,
+    newBlogRef.current = {
+      ...newBlogRef.current,
       [event.target.name]: event.target.value,
     };
   }
 
   return (
-    <div className="wrapper">
-      <form className="container" onSubmit={handleSubmit}>
-        <label>Title:</label>
-        <input type="text" name="title" required onChange={handleChange} />
+    <div className={styles.wrapper}>
+      <form className={styles.container} onSubmit={handleSubmit}>
+        <label className={styles.label}>Title:</label>
+        <input className={styles.input} type="text" name="title" required onChange={handleChange} />
 
-        <label>Body:</label>
-        <textarea name="body" required onChange={handleChange}></textarea>
+        <label className={styles.label}>Body:</label>
+        <textarea className={styles.textarea} name="body" required onChange={handleChange}></textarea>
 
-        <label>Author:</label>
-        <input type="text" name="author" required onChange={handleChange} />
+        <label className={styles.label}>Author:</label>
+        <input className={styles.input} type="text" name="author" required onChange={handleChange} />
 
-        <button type="submit">Submit</button>
+        <button className={styles.submitButton} type="submit">Submit</button>
       </form>
     </div>
   );

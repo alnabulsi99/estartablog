@@ -6,7 +6,7 @@ import { useEffect , useState } from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Blog1 from "./components/newBlog";
 import { NotFound } from "./components/NotFound";
-import SingleBlog from "./components/singleblog";
+import SingleBlog from "./components/SingleBlog";
 function App() {
   
   return (
