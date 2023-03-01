@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import useFetch from "../../Customhook/useFetch";
 import styles from "./styles.module.css";
 import { RiDeleteBin6Fill } from "react-icons/ri";
+import { Helmet } from "react-helmet";
 
 function SingleBlog() {
   const back = useNavigate();
@@ -25,6 +26,9 @@ function SingleBlog() {
   }
   return (
     <div className={styles.singleBlogContainer}>
+  <Helmet>
+        <title>{`Blog : ${id}`}</title>
+      </Helmet>
       <div className={styles.title}>
         Title : {blog?.title}{" "}
         <RiDeleteBin6Fill

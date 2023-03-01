@@ -5,17 +5,15 @@ import { BiSearchAlt } from "react-icons/bi";
 import BlogComp from "./BlogComp";
 
 function Blog() {
-
   const { data, loading, error } = useFetch("http://localhost:4000/blogs");
   const [searching, setSearching] = useState("");
- 
- 
+
   if (loading) return "loading ......";
 
   if (error) return "Errror fetching.....";
-
   return (
     <div className={styles.container}>
+    
       <div className={styles.searchicon}>
         <input
           className={styles.searchbar}
@@ -28,7 +26,7 @@ function Blog() {
       {data
         .filter((blog) => blog.title.toLowerCase().includes(searching))
         .map((blog) => (
-        <BlogComp blog = {blog} key={blog.id}/>
+          <BlogComp blog={blog} key={blog.id} />
         ))}
     </div>
   );
