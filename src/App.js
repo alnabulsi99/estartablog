@@ -1,27 +1,25 @@
-import "./App.css";
-import Index from "./components/navbar";
-import Blog from "./components/bloglist";
-import useFetch from "./Customhook/useFetch"
-import { useEffect , useState } from "react";
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Blog1 from "./components/newBlog";
-import { NotFound } from "./components/NotFound";
-import SingleBlog from "./components/SingleBlog";
+const Index = lazy(() => import('./components/navbar'));
+const Blog = lazy(() => import('./components/bloglist'));
+const Blog1 = lazy(() => import('./components/newBlog'));
+const SingleBlog = lazy(() => import('./components/SingleBlog'));
+const NotFound = lazy(() => import('./components/NotFound'));
+
 function App() {
-  
   return (
     <>
-   <BrowserRouter>
-      <Index />
-
-      <Routes>
-        <Route path="/Create" element={<Blog1 />} />
-        <Route path="/" element={<Blog />} />
-        <Route path='/SingleBlog/:id' element={<SingleBlog />}/>
-        <Route path="*" element={<NotFound/>}/>
-        
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+          <Index />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path='/Create' element={<Blog1 />} />
+            <Route path='/' element={<Blog />} />
+            <Route path='/SingleBlog/:id' element={<SingleBlog />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
     </>
   );
 }

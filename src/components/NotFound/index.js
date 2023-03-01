@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from "./styles.module.css";
 
-export const NotFound = () => {
+export default function NotFound(){
   return (
     <div className={styles["flex-container"]}>
       <div className={styles["text-center"]}>
