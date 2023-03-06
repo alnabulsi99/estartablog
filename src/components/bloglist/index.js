@@ -1,12 +1,47 @@
 import React, { useState, useEffect } from "react";
-import useFetch from "../../Customhook/useFetch";
+// import useFetch from "../../Customhook/useFetch";
 import styles from "./styles.module.css";
 import { BiSearchAlt } from "react-icons/bi";
 import BlogComp from "./BlogComp";
+import { useDispatch, useSelector } from "react-redux";
 
 function Blog() {
-  const { data, loading, error } = useFetch("http://localhost:4000/blogs");
+  // const { data, loading, error } = useFetch("http://localhost:4000/blogs");
   const [searching, setSearching] = useState("");
+  
+  const { blogs, loading, error } = useSelector((state) => state.blogsReducer);
+const dispatch=useDispatch()
+  useEffect(() => {
+    
+    async function fetchData() {
+      dispatch({
+        type: "FETCH_START",
+      });
+  
+      try {
+        const response = await fetch(
+          "http://localhost:4000/blogs"
+        );
+        const fetchedData = await response.json();
+  
+        dispatch({
+          type: "FETCH_SUCCESS",
+          payload: fetchedData
+        });
+      } catch (error) {
+        dispatch({
+          type: "FETCH_ERROR",
+        });
+      }
+    }
+    
+
+fetchData();
+
+  
+
+  }, [])
+  
 
   if (loading) return "loading ......";
 
@@ -23,7 +58,7 @@ function Blog() {
         />
         <BiSearchAlt size={30}></BiSearchAlt>
       </div>
-      {data
+      {blogs
         .filter((blog) => blog.title.toLowerCase().includes(searching))
         .map((blog) => (
           <BlogComp blog={blog} key={blog.id} />
